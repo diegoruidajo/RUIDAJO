@@ -35,10 +35,10 @@ function draw() {
   colorMode(HSB)
   stroke(206.2, 56.9, 71);
   strokeWeight(1);
-  line(x1, y2, x2, y1);
+  ellipse(x1, y2, x2, y1);
   noFill()
-  stroke(161.8, 64, 72.9);
-  strokeWeight(3);
+  stroke(206.2, 56.9, 71);
+  strokeWeight(random(5));
   ellipse(x1, y1, random(40), random(30));
   ellipse(x2, y2, random(30), random(40));
 
