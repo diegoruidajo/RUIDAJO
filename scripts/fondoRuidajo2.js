@@ -7,7 +7,7 @@ function setup() {
   canvas.position(0, 0);
   canvas.style('z-index', '-1');
 
-  background(0);
+  //background(0);
   strokeWeight(20);
   frameRate(60);
 }
