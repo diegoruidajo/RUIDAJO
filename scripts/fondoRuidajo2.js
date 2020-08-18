@@ -6,15 +6,15 @@ function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
   canvas.style('z-index', '-1');
-  rgba(0,250,0, 0)
-  strokeWeight(20);
+  
   frameRate(60);
 }
 
 function draw() {
-  for (let i = 0; i < width; i++) {
-    let r = random(1000);
+    let r = random(100);
+    let r2 = random(20);
+    let x1 = random(width)
+    strokeWeight(r2);
     stroke(r);
-    line(i, 0, i, height);
-  }
+    line(x1, 0, (x1*-1)+width, height);
 }
