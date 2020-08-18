@@ -6,8 +6,7 @@ function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
   canvas.style('z-index', '-1');
-
-  //background(0);
+  rgba(0,250,0, 0)
   strokeWeight(20);
   frameRate(60);
 }
