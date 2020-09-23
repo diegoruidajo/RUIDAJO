@@ -11,9 +11,11 @@
     }
     iframe {
       /* border: none; */
-      border-top: none;
-      border-bottom: dotted;
       overflow: hidden;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: dotted;
      }
     @keyframes tintotinto {
       0% {background-color: rgb(148, 94, 58);color: teal;text-align: left;}
@@ -45,7 +47,7 @@
  <a onclick="return false;" title="&#127863;" style="text-align: center;" ><h2>un tinto &#9749;</h2></a>
  <a onclick="return false;" title="&#9749;" style="text-align: center;" ><h2>no es un tinto &#127863;</h2></a>
  <br/>
- <iframe src="./cafe.html" height="100" width="100" id="cafe"></iframe>
- <iframe src="./vino.html" height="100" width="100" id="cafe"></iframe>
+ <iframe scrolling="no" src="./cafe.html" height="100" width="100" id="cafe"></iframe>
+ <iframe scrolling="no" src="./vino.html" height="100" width="100" id="cafe"></iframe>
 </body>
 </html>
