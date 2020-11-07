@@ -6,6 +6,14 @@ blockquote {
   animation-duration: 3s;
   animation-name: anim1;
   animation-fill-mode: forwards;
+  
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+p {
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .prueba {
