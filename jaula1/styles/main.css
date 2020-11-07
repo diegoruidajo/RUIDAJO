@@ -1,0 +1,116 @@
+body {padding: 5rem; text-align: center;}
+
+blockquote {
+  /* background-color: lightpink; padding: 1rem; */
+  padding: 1rem;
+  animation-duration: 3s;
+  animation-name: anim1;
+  animation-fill-mode: forwards;
+}
+
+.prueba {
+  background-color: lightpink;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+
+  transition-duration: 3s;
+  transition-delay: 100ms;
+  transition-timing-function: ease-in-out;
+}
+.prueba:hover {
+  background-color: white;
+  border-radius: 100%;
+  padding: 100px;
+  margin: 50px;
+}
+
+.prueba2 {
+  background-color: lightpink;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+}
+.prueba2:hover {
+  animation-duration: 1s;
+  animation-name: anim3;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.anim1 {
+  animation-duration: 3s;
+  animation-name: anim1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+#pagina {
+  animation-duration: 1s;
+  animation-name: anim2;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+#la-jaula-publicaciones {
+  animation-duration: 1s;
+  animation-name: anim3;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.botonete:link {color: white;}
+.botonete:visited {color: gray;}
+.botonete:hover {color: lightgrey;}
+.botonete:active {color: yellow;}
+
+@keyframes anim1 {
+  0% {
+    background-color: white;
+  }
+
+  100% {
+    background-color: lightpink;
+  }
+
+}
+
+@keyframes anim2 {
+  0% {
+    opacity: 0%;
+    position: relative;
+    left: 100%;
+    /*margin-left: 100%;*/
+  }
+
+  100% {
+    opacity: 100%;
+    position: relative;
+    left: 0%;
+    /*margin-left: 0%;*/
+  }
+}
+
+@keyframes anim3 {
+    0% {
+      opacity: 0%;
+      position: relative;
+      bottom: 100%;
+      /*margin-left: 100%;*/
+    }
+  
+    100% {
+      opacity: 100%;
+      position: relative;
+      bottom: 0%;
+      /*margin-left: 0%;*/
+    }
+
+}
+
+@keyframes prueba2 {
+  0% {
+  }
+  100% {
+  }
+}
