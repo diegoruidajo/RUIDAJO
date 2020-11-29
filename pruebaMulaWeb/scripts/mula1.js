@@ -14,7 +14,7 @@ let easing = 0.05;
 let canvas;
 
 function preload() {
-  resilienteMula = loadImage('../img/resiliente-caratulax1000.png');
+  resilienteMula = loadImage('https://diegoruidajo.github.io/RUIDAJO/pruebaMulaWeb/img/resiliente-caratulax1000.png');
 }
 
 function setup() {
