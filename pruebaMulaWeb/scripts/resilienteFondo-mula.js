@@ -10,8 +10,8 @@ let vel4 = 2.4;
 
 
 function preload() {
-  resilienteMula = loadImage('/img/gato-resiliente-x1000.png');
-  hijatrack = loadSound('audio/hija-resiliente.mp3');
+  resilienteMula = loadImage('RUIDAJO/pruebaMulaWeb/img/gato-resiliente-x1000.png');
+  hijatrack = loadSound('RUIDAJO/pruebaMulaWeb/audio/hija-resiliente.mp3');
 }
 
 function setup() {
