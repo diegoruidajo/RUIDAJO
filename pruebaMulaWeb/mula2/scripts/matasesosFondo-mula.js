@@ -9,41 +9,41 @@ function preload() {
   vAncho = windowWidth;
   vAlto = windowHeight;
   if(vAncho>150 && vAncho<500) {
-    mMula = new imagen(vAncho/1.2, vAlto/6, '../img/matasesosjs-img/matasesos-m-240x197.png');
-    uMula = new imagen(vAncho/1.2, vAlto/2.82, '../img/matasesosjs-img/matasesos-u-184x204.png');
-    lMula = new imagen(vAncho/1.2, vAlto/1.8, '../img/matasesosjs-img/matasesos-l-142x209.png');
-    aMula = new imagen(vAncho/1.2, vAlto/1.3, '../img/matasesosjs-img/matasesos-a-248x222.png');
-    calavera = new imagen(vAncho/5, vAlto/1.5, '../img/matasesosjs-img/matasesos-caratula-gifx478.gif');
-    martillo = new imagen(vAncho/5.5, vAlto/2.7, '../img/matasesosjs-img/matasesos-martillo-gifx678.gif');
-    rojo = new imagen(vAncho/2, vAlto/2, '../img/matasesosjs-img/matasesos-rojo-gifx1000.gif');
-    matasesostext = new imagen(vAncho/3.8, vAlto/8, '../img/matasesosjs-img/matasesos-matasesos-340x42.png');
+    mMula = new imagen(vAncho/1.2, vAlto/6, './img/matasesosjs-img/matasesos-m-240x197.png');
+    uMula = new imagen(vAncho/1.2, vAlto/2.82, './img/matasesosjs-img/matasesos-u-184x204.png');
+    lMula = new imagen(vAncho/1.2, vAlto/1.8, './img/matasesosjs-img/matasesos-l-142x209.png');
+    aMula = new imagen(vAncho/1.2, vAlto/1.3, './img/matasesosjs-img/matasesos-a-248x222.png');
+    calavera = new imagen(vAncho/5, vAlto/1.5, './img/matasesosjs-img/matasesos-caratula-gifx478.gif');
+    martillo = new imagen(vAncho/5.5, vAlto/2.7, './img/matasesosjs-img/matasesos-martillo-gifx678.gif');
+    rojo = new imagen(vAncho/2, vAlto/2, './img/matasesosjs-img/matasesos-rojo-gifx1000.gif');
+    matasesostext = new imagen(vAncho/3.8, vAlto/8, './img/matasesosjs-img/matasesos-matasesos-340x42.png');
   } else if(vAncho>500 && vAncho<1000){
-    mMula = new imagen(vAncho/1.3, vAlto/4, '../img/matasesosjs-img/matasesos-m-240x197.png');
-    uMula = new imagen(vAncho/1.3, vAlto/2.5, '../img/matasesosjs-img/matasesos-u-184x204.png');
-    lMula = new imagen(vAncho/1.3, vAlto/1.8, '../img/matasesosjs-img/matasesos-l-142x209.png');
-    aMula = new imagen(vAncho/1.3, vAlto/1.4, '../img/matasesosjs-img/matasesos-a-248x222.png');
-    calavera = new imagen(vAncho/2.8, vAlto/1.7, '../img/matasesosjs-img/matasesos-caratula-gifx478.gif');
-    martillo = new imagen(vAncho/2.9, vAlto/3.2, '../img/matasesosjs-img/matasesos-martillo-gifx678.gif');
-    rojo = new imagen(vAncho/2, vAlto/2, '../img/matasesosjs-img/matasesos-rojo-gifx1000.gif');
-    matasesostext = new imagen(vAncho/5, vAlto/8, '../img/matasesosjs-img/matasesos-matasesos-340x42.png');
+    mMula = new imagen(vAncho/1.3, vAlto/4, './img/matasesosjs-img/matasesos-m-240x197.png');
+    uMula = new imagen(vAncho/1.3, vAlto/2.5, './img/matasesosjs-img/matasesos-u-184x204.png');
+    lMula = new imagen(vAncho/1.3, vAlto/1.8, './img/matasesosjs-img/matasesos-l-142x209.png');
+    aMula = new imagen(vAncho/1.3, vAlto/1.4, './img/matasesosjs-img/matasesos-a-248x222.png');
+    calavera = new imagen(vAncho/2.8, vAlto/1.7, './img/matasesosjs-img/matasesos-caratula-gifx478.gif');
+    martillo = new imagen(vAncho/2.9, vAlto/3.2, './img/matasesosjs-img/matasesos-martillo-gifx678.gif');
+    rojo = new imagen(vAncho/2, vAlto/2, './img/matasesosjs-img/matasesos-rojo-gifx1000.gif');
+    matasesostext = new imagen(vAncho/5, vAlto/8, './img/matasesosjs-img/matasesos-matasesos-340x42.png');
   } else if(vAncho>1000 && vAncho<1300){
-    mMula = new imagen(vAncho/1.5, vAlto/5, '../img/matasesosjs-img/matasesos-m-240x197.png');
-    uMula = new imagen(vAncho/1.5, vAlto/2.5, '../img/matasesosjs-img/matasesos-u-184x204.png');
-    lMula = new imagen(vAncho/1.5, vAlto/1.65, '../img/matasesosjs-img/matasesos-l-142x209.png');
-    aMula = new imagen(vAncho/1.5, vAlto/1.22, '../img/matasesosjs-img/matasesos-a-248x222.png');
-    calavera = new imagen(vAncho/2.9, vAlto/1.45, '../img/matasesosjs-img/matasesos-caratula-gifx478.gif');
-    martillo = new imagen(vAncho/2.9, vAlto/2.5, '../img/matasesosjs-img/matasesos-martillo-gifx678.gif');
-    rojo = new imagen(vAncho/2.1, vAlto/2.3, '../img/matasesosjs-img/matasesos-rojo-gifx1000.gif');
-    matasesostext = new imagen(vAncho/5, vAlto/10, '../img/matasesosjs-img/matasesos-matasesos-340x42.png');
+    mMula = new imagen(vAncho/1.5, vAlto/5, './img/matasesosjs-img/matasesos-m-240x197.png');
+    uMula = new imagen(vAncho/1.5, vAlto/2.5, './img/matasesosjs-img/matasesos-u-184x204.png');
+    lMula = new imagen(vAncho/1.5, vAlto/1.65, './img/matasesosjs-img/matasesos-l-142x209.png');
+    aMula = new imagen(vAncho/1.5, vAlto/1.22, './img/matasesosjs-img/matasesos-a-248x222.png');
+    calavera = new imagen(vAncho/2.9, vAlto/1.45, './img/matasesosjs-img/matasesos-caratula-gifx478.gif');
+    martillo = new imagen(vAncho/2.9, vAlto/2.5, './img/matasesosjs-img/matasesos-martillo-gifx678.gif');
+    rojo = new imagen(vAncho/2.1, vAlto/2.3, './img/matasesosjs-img/matasesos-rojo-gifx1000.gif');
+    matasesostext = new imagen(vAncho/5, vAlto/10, './img/matasesosjs-img/matasesos-matasesos-340x42.png');
   } else if(vAncho>1300){
-    mMula = new imagen(vAncho/1.5, vAlto/5, '../img/matasesosjs-img/matasesos-m-240x197.png');
-    uMula = new imagen(vAncho/1.5, vAlto/2.5, '../img/matasesosjs-img/matasesos-u-184x204.png');
-    lMula = new imagen(vAncho/1.5, vAlto/1.65, '../img/matasesosjs-img/matasesos-l-142x209.png');
-    aMula = new imagen(vAncho/1.5, vAlto/1.22, '../img/matasesosjs-img/matasesos-a-248x222.png');
-    calavera = new imagen(vAncho/2.5, vAlto/1.45, '../img/matasesosjs-img/matasesos-caratula-gifx478.gif');
-    martillo = new imagen(vAncho/2.4, vAlto/2.2, '../img/matasesosjs-img/matasesos-martillo-gifx678.gif');
-    rojo = new imagen(vAncho/2, vAlto/2, '../img/matasesosjs-img/matasesos-rojo-gifx1000.gif');
-    matasesostext = new imagen(vAncho/3, vAlto/6.5, '../img/matasesosjs-img/matasesos-matasesos-340x42.png');
+    mMula = new imagen(vAncho/1.5, vAlto/5, './img/matasesosjs-img/matasesos-m-240x197.png');
+    uMula = new imagen(vAncho/1.5, vAlto/2.5, './img/matasesosjs-img/matasesos-u-184x204.png');
+    lMula = new imagen(vAncho/1.5, vAlto/1.65, './img/matasesosjs-img/matasesos-l-142x209.png');
+    aMula = new imagen(vAncho/1.5, vAlto/1.22, './img/matasesosjs-img/matasesos-a-248x222.png');
+    calavera = new imagen(vAncho/2.5, vAlto/1.45, './img/matasesosjs-img/matasesos-caratula-gifx478.gif');
+    martillo = new imagen(vAncho/2.4, vAlto/2.2, './img/matasesosjs-img/matasesos-martillo-gifx678.gif');
+    rojo = new imagen(vAncho/2, vAlto/2, './img/matasesosjs-img/matasesos-rojo-gifx1000.gif');
+    matasesostext = new imagen(vAncho/3, vAlto/6.5, './img/matasesosjs-img/matasesos-matasesos-340x42.png');
   } 
 
   matasesospreview = loadSound('./audio/matasesos-mula-preview.mp3');
