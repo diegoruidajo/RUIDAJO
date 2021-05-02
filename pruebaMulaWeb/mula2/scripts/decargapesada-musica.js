@@ -7,7 +7,7 @@ function preload() {
   vAncho = windowWidth;
   vAlto = windowHeight;
 
-  matasesospreview = loadSound('audio/matasesos-mula-preview.mp3');
+  matasesospreview = loadSound('./audio/matasesos-mula-preview.mp3');
 }
 
 function setup() {
