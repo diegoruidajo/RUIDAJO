@@ -46,7 +46,7 @@ function preload() {
     matasesostext = new imagen(vAncho/3, vAlto/6.5, '../img/matasesosjs-img/matasesos-matasesos-340x42.png');
   } 
 
-  matasesospreview = loadSound('audio/matasesos-mula-preview.mp3');
+  matasesospreview = loadSound('./audio/matasesos-mula-preview.mp3');
 }
 
 function setup() {
