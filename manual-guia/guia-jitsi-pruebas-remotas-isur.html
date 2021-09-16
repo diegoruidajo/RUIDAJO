@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-09-16 ju. 15:38 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guía Jitsi Pruebas Remotas ISUR</title>
+<meta name="autor" content="Diego Herrera" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Guía Jitsi Pruebas Remotas ISUR</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org2dde23d">1. Acceder a la reunión meet Jitsi</a>
+<ul>
+<li><a href="#org3ce2c48">1.1. Consideraciones previas.</a></li>
+<li><a href="#orgbf8aa00">1.2. Enlace de reunión.</a></li>
+<li><a href="#org10a0c91">1.3. Permiso para usar micrófono y cámara.</a></li>
+<li><a href="#orgd2ca918">1.4. Identificarse e ingreso a la reunión.</a></li>
+<li><a href="#org72cdde6">1.5. Alertas</a></li>
+<li><a href="#orgd419894">1.6. Compartir ventana.</a></li>
+<li><a href="#orgc5aca25">1.7. Salir de la reunión.</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Está guia explica como acceder a una reunión en la plataforma Jitsi, en el navegador google chrome, en un computador con sistema operativo windows 10, usando el lector de pantalla NVDA y el uso del teclado.
+Solo abarca los pasos para ingresar a la reunión y el uso de herramientas necesarias para la realización de pruebas remotas propuestas por el proyecto de investigación de accesibilidad páginas web del estado COVID19 de ISUR (Centro de Internet y Sociedad).
+</p>
+
+<div id="outline-container-org2dde23d" class="outline-2">
+<h2 id="org2dde23d"><span class="section-number-2">1.</span> Acceder a la reunión meet Jitsi</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org3ce2c48" class="outline-3">
+<h3 id="org3ce2c48"><span class="section-number-3">1.1.</span> Consideraciones previas.</h3>
+<div class="outline-text-3" id="text-1-1">
+<ol class="org-ol">
+<li>La plataforma Jitsi (pronunciada en inglés Yitsi) permite acceder a reuniones virtuales desde el navegador web y sin necesidad de crear una cuenta o registro de usuario.
+<ol class="org-ol">
+<li>La página donde podemos crear o acceder a las reuniones es: <a href="https://meet.jit.si">https://meet.jit.si</a></li>
+</ol></li>
+<li>Para esta guía de uso se utiliza el navegadro google chrome.</li>
+<li>El idioma en que se muestra Jitsi depende de la configuración de idioma del navegador y el computador.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgbf8aa00" class="outline-3">
+<h3 id="orgbf8aa00"><span class="section-number-3">1.2.</span> Enlace de reunión.</h3>
+<div class="outline-text-3" id="text-1-2">
+<ol class="org-ol">
+<li>El enlace de invitación contiene el nombre de la sala de reunión despues de la dirección: <a href="https://meet.jit.si">https://meet.jit.si</a>. Ejemplo: meet.jit.si/prueba-isur</li>
+<li>El enlace de invitación debe ser ingresado en un navegador web como: google chrome. La plataforma jitsi está optimizada para navegadores chrome o derivados como: chromium o brave, entre otros, por lo cúal se recomienda el uso de estos navegadores.</li>
+<li>El idioma de la interfaz de jitsi depende del lenguaje seleccionado en el navegador.
+<ol class="org-ol">
+<li>Es decir si el navegador chrome está configurado en inglés la interfaz de jitsi se presentara en inglés.</li>
+<li>Algunos elementos, textos o botones pueden permanecer en inglés debido a falta de traducción por parte del equipo de desarrollo de jitsi, pero ninguna información que pueda entorpecer el desarrollo de las pruebas.</li>
+</ol></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org10a0c91" class="outline-3">
+<h3 id="org10a0c91"><span class="section-number-3">1.3.</span> Permiso para usar micrófono y cámara.</h3>
+<div class="outline-text-3" id="text-1-3">
+<ol class="org-ol">
+<li>Después de cargar el enlace de invitación a la reunión el navegador muestra una ventana de díalogo la información: <a href="https://meet.jit.si">https://meet.jit.si</a> quiere, Utilizar el micrófono, Utilizar la cámara.</li>
+<li>Presionar el botón nombrado: Permitir.</li>
+<li>La ventana del navegador queda con el título de la sala de reunión y finaliza con: Jitsi Meet. Ejemplo: pruebas-isur | Jitsi Meet.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgd2ca918" class="outline-3">
+<h3 id="orgd2ca918"><span class="section-number-3">1.4.</span> Identificarse e ingreso a la reunión.</h3>
+<div class="outline-text-3" id="text-1-4">
+<ol class="org-ol">
+<li>Después de dar los permisos de uso de cámara y micrófono al navegador, el cursor queda ubicado en la región principal de la ventana en un campo de edición nombrado: Por favor ingresa tu nombre aquí.</li>
+<li>Ingrese el nombre con el que quiere que lo identifiquen en la reunión.</li>
+<li>El segundo campo de la ventana es el botón nombrado: Entrar a la reunión.</li>
+<li>El tercer botón es un conmutador nombrado: Entrar sin sonido. Pero si es necesario entrar sin el uso del micrófono es mejor cerrarlo con el siguiente botón.</li>
+<li>El cuarto campo es el botón conmutador nombrado: Silenciar micrófono. si está pulsado, se ingresa con el micrófono silenciado.</li>
+<li>El quinto campo es un botón para un submenu de la configuración de audio que usualmente está sin traducción, nombrado: Audio Settings.</li>
+<li>El sexto campo es un botón conmutador nombrado: Alternar video. si está pulsado, se ingresa con la cámara apagada.</li>
+<li>El séptimo campo es un botón para un submenu de la configuración de video que usualmente está sin traducción, nombrado: Video Settings.</li>
+<li>Vuelva al segundo campo de la reunión, botón nombrado: Entrar a la reunión. Y pulselo para ingresar a la reunión.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org72cdde6" class="outline-3">
+<h3 id="org72cdde6"><span class="section-number-3">1.5.</span> Alertas</h3>
+<div class="outline-text-3" id="text-1-5">
+<ol class="org-ol">
+<li>La interfaz de Jitsi Meet despliega diferentes alertas que informan la configuración o acciones que se realizan o necesitan en la reunión.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgd419894" class="outline-3">
+<h3 id="orgd419894"><span class="section-number-3">1.6.</span> Compartir ventana.</h3>
+<div class="outline-text-3" id="text-1-6">
+<ol class="org-ol">
+<li>Dentro de la reunión porfavor ubiquese en le último campo presionando las teclas: Shift + Tab.
+<ol class="org-ol">
+<li>El último campo de la ventana es un botón nombrado: Colgar.</li>
+</ol></li>
+<li>Se va a mover en campos del último hacia los primeros con la combinación de teclas: Shift + Tab. Es necesario llegar al botón conmutador nombrado: Alternar pantalla compartida. Y pulsarlo. (octava instrucción de esta parte de la guía)</li>
+<li>Seguira el botón conmutador nombrado: Alternar más acciones. presione Shift + Tab.</li>
+<li>Seguira el botón conmutador nombrado: Alternar vista de mosaico. presione Shift + Tab.</li>
+<li>Seguira el botón conmutador nombrado en inglés: Participants. Participantes. presione Shift + Tab.</li>
+<li>Seguira el botón conmutador nombrado: Levantar o bajar la mano. presione Shift + Tab.</li>
+<li>Seguira el botón conmutador nombrado: Alternar ventana de chat. presione Shift + Tab.</li>
+<li>Seguira el botón conmutador nombrado: Alternar Pantalla compartida. Presionamos esté botón.</li>
+<li>Se desplegara una ventana de dialogo con la información: Elige lo que quieres compartir.</li>
+<li>El cursor estará ubicado en el botón cancelar, mueva el cursor al campo nombrado: Toda la pantalla agrupación. presionando Shift tres veces.</li>
+<li>Presione el campo: Toda la pantalla agrupación. Iniciara la pantalla completa compartida.</li>
+<li>Para dejar de compartir navegar con la tecla Shift hasta el botón conmutable nombrado: Alternar Pantalla compartida y presionarlo. Se dejara de compartir la pantalla.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgc5aca25" class="outline-3">
+<h3 id="orgc5aca25"><span class="section-number-3">1.7.</span> Salir de la reunión.</h3>
+<div class="outline-text-3" id="text-1-7">
+<ol class="org-ol">
+<li>Dentro de la reunión porfavor ubiquese en le último campo presionando las teclas: Shift + Tab.</li>
+<li>El último campo de la ventana es un botón nombrado: Colgar. Presionelo.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="autor">Autor: Diego Herrera</p>
+</div>
+</body>
+</html>
