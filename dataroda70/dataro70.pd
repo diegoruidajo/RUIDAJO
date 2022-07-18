@@ -1,0 +1,71 @@
+#N canvas 698 32 1204 963 12;
+#X obj 55 130 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 190 107 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 217 91 Bang - se puede crear con un objeto [bng] o en el menu
+put buscar bang;
+#X obj 186 56 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 213 45 Toggle - se puede crear con un objeto [tgl] o en el
+menu put buscar toggle;
+#X obj 55 47 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X text 159 198 Puredata tiene dos modos de trabajo: edición y acción
+\, se alterna en estos modos con la combinación de teclas ctrl+e;
+#N canvas 698 552 1204 443 siguiente 0;
+#X msg 41 44 60;
+#X msg 81 44 62;
+#X msg 120 45 64;
+#X obj 63 85 mtof;
+#X floatatom 63 109 5 0 0 0 - - - 0;
+#X obj 63 132 osc~;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X restore 185 338 pd siguiente;
+#X obj 55 84 metro 1000;
+#X text 163 170 Edicion accion - ctrl + e;
+#X text 164 242 virguliña ~ en teclado en español es la combinación
+de teclas alt(gr)++;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 0 0.0571445 0.178576 0.221434 0.285721 0.30715 0.335722 0.357151
+0.37858 0.428582 0.47144 0.514298 0.535727 0.564299 0.585728 0.621443
+0.657158 0.671444 0.678587 0.68573 0.700016 0.707159 0.707159 0.714302
+0.714302 0.714302 0.707159 0.700016 0.700016 0.68573 0.678587 0.664301
+0.657158 0.650015 0.635729 0.621443 0.592871 0.564299 0.535727 0.500012
+0.40001 0.30715 0.242863 0.171433 0.0928596 -0.0571438 -0.171432 -0.228576
+-0.278577 -0.314293 -0.371437 -0.414295 -0.435724 -0.485725 -0.514297
+-0.535726 -0.557155 -0.578584 -0.607156 -0.628585 -0.642871 -0.664301
+-0.68573 -0.700016 -0.721445 -0.742874 -0.750017 -0.75716 -0.764303
+-0.764303 -0.764303 -0.764303 -0.764303 -0.764303 -0.75716 -0.75716
+-0.742874 -0.714302 -0.692873 -0.664301 -0.635728 -0.607156 -0.571441
+-0.550012 -0.514297 -0.471439 -0.442867 -0.421438 -0.371437 -0.328579
+-0.28572 -0.250005 -0.21429 -0.192861 -0.150003 -0.128574 -0.0928589
+-0.0642868 -0.0285717 0.0500015;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 327 309 graph;
+#X text 161 293 Oscilador sinosoidal;
+#X msg 22 179 440;
+#X obj 22 203 osc~;
+#X obj 46 237 *~;
+#X msg 63 200 0.9;
+#X obj 46 334 dac~;
+#X text 9 377 digital to analog converter;
+#X obj 58 284 *~;
+#X obj 108 145 vsl 15 128 0 0.9 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 108 281 5 0 0 0 - - - 0;
+#X connect 5 0 8 0;
+#X connect 8 0 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 19 0;
+#X connect 16 0 15 1;
+#X connect 19 0 17 0;
+#X connect 19 0 17 1;
+#X connect 20 0 21 0;
+#X connect 21 0 19 1;
